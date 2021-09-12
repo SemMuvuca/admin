@@ -1,35 +1,39 @@
 <template>
-  <q-page class="flex flex-center">
-    <apex-chart width="500" type="bar" :options="options" :series="series"/>
-    </q-page>
+  <q-page class="container" :style="{backgroundImage: 'linear-gradient( 135deg, #4B79A1, #283E51)'}">
+    <div class="overflow-auto">
+      <div class="row q-col-gutter-md q-px-md q-pt-md">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+        <card-base>
+          <line-chart/>
+        </card-base>
+        </div>
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <card-base>
+            <bar-chart/>
+          </card-base>
+        </div>
+      </div>
+    </div>
+  </q-page>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, defineAsyncComponent } from 'vue'
+import CardBase from 'components/CardBase'
 
 export default defineComponent({
   name: 'PageIndex',
+  components: {
+    CardBase,
+    LineChart: defineAsyncComponent( () => import('components/charts/LineChart')),
+    BarChart: defineAsyncComponent(() => import('components/charts/BarChart'))
+  },
 
   setup () {
 
-    const options = {
-        chart: {
-          id: 'vuechart-example'
-        },
-        xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
-        }
-      }
-
-    const series = [{
-        name: 'series-1',
-        data: [30, 40, 45, 50, 49, 60, 70, 91 ]
-      }]
-
 
     return {
-      options,
-      series
+
     }
   }
 })
