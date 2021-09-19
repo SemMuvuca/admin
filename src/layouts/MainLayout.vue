@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -10,11 +10,18 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
+        <q-btn flat :to="{name: 'Main'}" label="Página Principal"/>
 
-        <q-toolbar-title>
+
+        <!-- <q-toolbar-title>
           Sem Muvuca Admin
-        </q-toolbar-title>
+        </q-toolbar-title> -->
 
+      <!-- <q-btn
+          style="background: #36384c"
+          @click="toggle"
+          :icon="$q.fullscreen.isActive ? 'fas fa-compress' : 'fas fa-expand'"
+        /> -->
       </q-toolbar>
     </q-header>
 
@@ -24,11 +31,11 @@
       bordered
     >
       <q-list>
-        <q-item-label
+        <!-- <q-item-label
           header
         >
           Essential Links
-        </q-item-label>
+        </q-item-label> -->
 
         <EssentialLink
           v-for="link in essentialLinks"
@@ -49,46 +56,16 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: 'Dashboard',
+    // caption: 'Visualização',
+    icon: 'space_dashboard',
+    name: 'Dashboard'
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+    title: 'Cadastro de produtos ',
+    // caption: 'github.com/quasarframework',
+    icon: 'inventory_2',
+    name: 'Produtos'
   }
 ];
 
