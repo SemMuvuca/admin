@@ -28,7 +28,7 @@ export default defineComponent({
           id: 'line-chart'
         },
         xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+          categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov'],
           labels: {
             style: {
               colors: '#fff'
@@ -48,7 +48,7 @@ export default defineComponent({
           }
         },
         title: {
-          text: 'line',
+          text: 'Média de produtos vendidos por mês',
           align: 'left',
           style: {
             color: '#FFF'
@@ -58,7 +58,7 @@ export default defineComponent({
 
     const series = [{
         name: 'series-1',
-        data: [30, 40, 45, 50, 49, 60, 70, 91 ]
+        data: [1300, 2471, 3087, 4791, 2927, 2371, 5396, 8371 ]
       }]
 
 

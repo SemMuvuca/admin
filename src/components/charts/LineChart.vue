@@ -28,7 +28,7 @@ export default defineComponent({
           id: 'line-chart'
         },
         xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+          categories: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov'],
           labels: {
             style: {
               colors: '#fff'
@@ -48,7 +48,7 @@ export default defineComponent({
           }
         },
         title: {
-          text: 'line',
+          text: 'Lucro médio (mil) por mês',
           align: 'left',
           style: {
             color: '#FFF'
